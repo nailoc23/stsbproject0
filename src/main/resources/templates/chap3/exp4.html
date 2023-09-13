@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>나의 친구 정보를 출력하기</h2>
+	
+	<div th:object="${object}">
+		<p th:text="*{id}"></p>
+		<p th:text="${object.getName()}"></p>
+	</div>
+</body>
+</html>

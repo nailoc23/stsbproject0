@@ -12,7 +12,7 @@ public class HomeController {
 	@GetMapping("/hello") // HTTP GET 요청처리
 	@ResponseBody
 	public String hello() {
-		return "Hello Home Control Sample Text";
+		return "Hello Home Control Another Text Change !";
 	}
 
 	@GetMapping("/csstest") // HTTP GET 요청처리

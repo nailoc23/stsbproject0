@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>타임리프 3 링크식</h2>
+	
+	<!-- 외부 도메인 연결 -->
+	<a th:href="@{https://www.google.com}">구글 검색사이트</a>
+	
+	<br><br>
+	<!-- 같은 서버내에서 연결 -->
+	<a th:href="@{/exp1}">표현식1 이동하기</a>
+</body>
+</html>
