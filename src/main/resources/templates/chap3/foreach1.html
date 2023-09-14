@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>타임리프 반복문 예제</h2>
+	
+	<h3>커피 무인 자판기 메뉴</h3>
+	
+	<table width="300" border="1">
+		
+		<tr>
+			<th>메뉴명</th>
+			<th>가격</th>
+		</tr>	
+		
+		<tr th:each="obj:${coffees}">
+			<td th:text="${obj}">이름</td>
+			<td>0000</td>
+		</tr>	
+		
+		
+	</table>
+	
+	<h3>커피 무인 자판기 메뉴2</h3>
+	
+	<table width="300" border="1">
+		
+		<tr>
+			<th>메뉴명</th>
+			<th>가격</th>
+		</tr>	
+		
+		<tr th:each="obj:${cafes}">
+			<td th:text="${obj.name}">이름</td>
+			<td th:text="${obj.price}">0000</td>
+		</tr>	
+		
+		
+	</table>
+</body>
+</html>

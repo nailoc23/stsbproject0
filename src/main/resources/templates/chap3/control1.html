@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>타임리프 조건문</h2>
+	
+	<p th:if="${chk}" th:text="|${num} 는 짝수입니다|"></p>
+	<p th:unless="${chk}" th:text="|${num} 는 홀수입니다|"></p>
+</body>
+</html>

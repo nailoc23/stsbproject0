@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>타임리프 조건문 복습예제</h2>
+	<p th:text="${gender}"></p>
+	<p th:text="${chk}"></p>
+	
+	<p th:if="${chk}" th:text="|당신은 ${gender} 입니다|"></p>
+	<p th:if="${gender=='남자'}" th:text="|당신은 ${gender} 입니다|"></p>
+	<p th:unless="${chk}" th:text="|당신은 ${gender} 입니다|"></p>
+</body>
+</html>

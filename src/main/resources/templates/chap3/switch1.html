@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>타임리프 스위치문 예제</h2>
+	
+	<div th:switch="${gd}">
+		<p th:case="A" th:text="결과는Excellent"></p>
+		<p th:case="B" th:text="결과는VeryGood"></p>
+		<p th:case="C" th:text="결과는Good"></p>
+		<p th:case="D" th:text="결과는NotBad"></p>	
+		<p th:case="*">기타</p>
+	</div>
+</body>
+</html>
