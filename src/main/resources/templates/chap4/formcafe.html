@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>My Data 선택 폼</h2>
+	
+	<p>메뉴를 선택하세요</p>
+	<form action="cafepro" method="POST">
+		<p>
+		<input type="checkbox" name="mycafe" value="아메리카노"> 아메리카노
+		</p>
+		<p>
+		<input type="checkbox" name="mycafe" value="카페라떼"> 카페라떼
+		</p>
+		<p>
+		<input type="checkbox" name="mycafe" value="콜드블루"> 콜드블루
+		</p>
+		<p>
+		<input type="checkbox" name="mycafe" value="큐브라떼"> 큐브라떼
+		</p>
+		
+		<p>
+		<input type="submit" value="전송">
+		</p>		
+	</form>
+</body>
+</html>

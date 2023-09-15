@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>My 데이터 목록 예제</h2>
+	
+	<ul th:each="obj:${cafelist}">
+		<li th:text="${obj}">테스트</li>
+	</ul>
+</body>
+</html>

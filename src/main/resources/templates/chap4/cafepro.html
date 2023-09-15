@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>선택 메뉴 결과</h2>
+	
+	<h3 th:text="|총갯수: ${selcnt}|"></h3>
+	
+	<ul th:each="obj:${sellist}">
+		<li><span th:text="${obj.name}"></span></sapn>, 
+			<span th:text="${obj.price}"></sapn></li>
+	</ul>
+</body>
+</html>
