@@ -44,5 +44,16 @@ public class MyDataController {
 		
 		return "chap4/cafepro";		
 	}
+	
+	// 관리자 테이블 데이터 수 출력
+	@GetMapping("/mngtotal")
+	public String mngtotal(Model model) throws Exception {
+		
+		int result = mydatasv.getTotalManager();
+		
+		model.addAttribute("total", result);
+		
+		return "chap4/mngtotal";
+	}
 
 }

@@ -3,9 +3,11 @@ package com.human.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.human.domain.CafeObj;
+import com.human.mapper.ManagerMapper;
 
 @Service
 public class MyDataServiceImpl implements MyDataService {
@@ -59,6 +61,16 @@ public class MyDataServiceImpl implements MyDataService {
 		}
 		
 		return list;
+	}
+
+	@Autowired
+	ManagerMapper managerMap;
+	
+	@Override
+	public int getTotalManager() throws Exception {
+		// TODO Auto-generated method stub
+		int rst = managerMap.totalManager();
+		return rst;
 	}
 
 }

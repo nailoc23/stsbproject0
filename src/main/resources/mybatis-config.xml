@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 형식 -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<!-- mybatis 설정 -->
+<configuration>
+	
+	<settings>
+		<!-- (예) mem_name : memName 호환  -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>		
+	</settings>
+
+	<typeAliases>
+		<!-- DTO가 있는 경로 -->
+		<package name="com.human.domain"/>
+	</typeAliases>
+
+</configuration>

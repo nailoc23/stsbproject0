@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/mngstyle.css">
+</head>
+<body>
+	<h2>관리자 목록 출력</h2>
+	
+	<table>
+		
+		<tr>
+			<th>아이디</th>
+			<th>비밀번호</th>
+			<th>관리자이름</th>
+			<th>전화번호</th>
+			<th>수정</th>
+			<th>삭제</th>
+		</tr>
+		
+		<tr th:each="obj:${list}">
+			<td th:text="${obj.id}">1111</td>
+			<td th:text="${obj.pwd}">0000</td>
+			<td th:text="${obj.name}">홍길동</td>
+			<td th:text="${obj.phone}">010 1111 2222</td>
+			<td>
+				<button type="button">수 정</button>
+			</td>
+			<td>
+				<button type="button">삭 제</button>
+			</td>
+		</tr>
+	</table>
+	
+	<p>
+		<button type="button">신규 등록</button>
+	</p>
+</body>
+</html>
