@@ -22,4 +22,11 @@ public class ManagerServiceImpl implements ManagerService {
 		return rst;
 	}
 
+	@Override
+	public Manager getManagerOne(int id) throws Exception {
+		// TODO Auto-generated method stub
+		Manager rst = managerMap.managerSelect(id);
+		return rst;
+	}
+
 }

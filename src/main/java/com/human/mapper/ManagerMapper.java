@@ -14,5 +14,8 @@ public interface ManagerMapper {
 
 	//관리지 정보 목록 함수
 	public List<Manager> managerList() throws Exception;
+	
+	//관리자 개인 정보 보기 함수
+	public Manager managerSelect(int id) throws Exception;
 
 }

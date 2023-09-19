@@ -17,6 +17,7 @@
 			<th>전화번호</th>
 			<th>수정</th>
 			<th>삭제</th>
+			<th>보기</th>
 		</tr>
 		
 		<tr th:each="obj:${list}">
@@ -30,11 +31,30 @@
 			<td>
 				<button type="button">삭 제</button>
 			</td>
+			<td>
+				<!--onclick="mngview(1000);"-->
+				<!-- th:onclick="|alert(${obj.id});|"  -->
+				<button th:onclick="|mngview(${obj.id});|" type="button">보 기</button>
+			</td>
 		</tr>
 	</table>
 	
 	<p>
 		<button type="button">신규 등록</button>
 	</p>
+	
+	<script src="/js/jquery-3.7.0.min.js"></script>
+	<script>
+		$(document).ready(function(){ 
+			//alert('스타트 제이쿼리')
+		});
+		function mngview(id) {
+			//alert(id);
+			var popurl = "mngview?id="+id;
+			var popoption = "top=500, left=500, width=400, height=300";
+			window.open(popurl, '관리자정보', popoption);
+		}
+	</script>
 </body>
 </html>
+

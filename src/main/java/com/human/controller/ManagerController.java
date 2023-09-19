@@ -27,5 +27,15 @@ public class ManagerController {
 		
 		return "chap4/mnglist";
 	}
+	
+	@GetMapping(path="/mngview", params="id")
+	public String mngview(Model model, int id) throws Exception {
+		
+		Manager result = managersv.getManagerOne(id);
+		model.addAttribute("mid", id);
+		model.addAttribute("manager", result);
+		
+		return "chap4/mngview";
+	}
 
 }
