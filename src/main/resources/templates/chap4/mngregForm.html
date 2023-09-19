@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/mngstyle.css">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>관리자 신규 정보 등록</h2>
+	
+	<form action="mngreg" method="POST" id="regfrm">
+	<table width="400">
+		<tr>
+			<th>*아이디</th>
+			<td>
+				<input type="text" name="id" placeholder="아이디를 입력하시오">
+			</td>
+		</tr>
+		<tr>
+			<th>*비밀번호</th>
+			<td><input type="password" name="pwd" placeholder="비밀번호를 입력하시오"></td>
+		</tr>
+		<tr>
+			<th>*이름</th>
+			<td><input type="text" name="name" placeholder="이름을 입력하시오"></td>
+		</tr>
+		<tr>
+			<th>전화번호</th>
+			<td><input type="text" name="phone" placeholder="전화번호를 입력하시오"></td>
+		</tr>
+	</table>	
+	
+	<p>
+		<button type="button" onclick="history.back();">관리자목록</button>
+		&nbsp;&nbsp; <button type="button" onclick="mngregpro();">등록하기</button></p>
+	</p>
+	
+	</form>
+	
+	<script src="/js/jquery-3.7.0.min.js"></script>
+	<script>
+		function mngregpro() {
+			alert(1111);
+			
+			$('#regfrm').submit();
+		}
+		
+	</script>
+	
+</body>
+</html>

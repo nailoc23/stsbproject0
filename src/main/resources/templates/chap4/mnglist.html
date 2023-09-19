@@ -34,13 +34,13 @@
 			<td>
 				<!--onclick="mngview(1000);"-->
 				<!-- th:onclick="|alert(${obj.id});|"  -->
-				<button th:onclick="|mngview(${obj.id});|" type="button">보 기</button>
+				<button th:onclick="'|mngview(${obj.id});|'" type="button">보 기</button>
 			</td>
 		</tr>
 	</table>
 	
 	<p>
-		<button type="button">신규 등록</button>
+		<button type="button" onclick="mngreg();">신규 등록</button>
 	</p>
 	
 	<script src="/js/jquery-3.7.0.min.js"></script>
@@ -53,6 +53,10 @@
 			var popurl = "mngview?id="+id;
 			var popoption = "top=500, left=500, width=400, height=300";
 			window.open(popurl, '관리자정보', popoption);
+		}
+		
+		function mngreg() {
+			location.href = 'mngreg';
 		}
 	</script>
 </body>
