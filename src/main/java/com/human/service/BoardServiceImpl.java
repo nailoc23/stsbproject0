@@ -29,4 +29,11 @@ public class BoardServiceImpl implements BoardService {
 		return rst;
 	}
 
+	@Override
+	public Board readBoardOne(int no) throws Exception {
+		// TODO Auto-generated method stub		
+		Board rst = boardmapper.selectBoardOne(no);
+		return rst;
+	}
+
 }

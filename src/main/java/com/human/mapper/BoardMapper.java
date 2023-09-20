@@ -13,4 +13,6 @@ public interface BoardMapper {
 	
 	public int selectTotalBoard()  throws Exception;
 	
+	public Board selectBoardOne(int no) throws Exception;
+	
 }

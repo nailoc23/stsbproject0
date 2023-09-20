@@ -11,5 +11,8 @@ public interface BoardService {
 	
 	// 게시판 총 갯수 
 	public int getTotalBoard() throws Exception;
+	
+	// 게시판 글읽기
+	public Board readBoardOne(int no) throws Exception;
 
 }

@@ -29,5 +29,15 @@ public class BoardController {
 		
 		return "chap5/list";
 	}
-
+	
+	@GetMapping(path="/read", params="no")
+	public String read(Model model, int no) throws Exception {
+		
+		//System.out.println("글번호: " + no);
+		Board result = boardsv.readBoardOne(no);
+		
+		model.addAttribute("board", result);
+		
+		return "chap5/read";
+	}
 }

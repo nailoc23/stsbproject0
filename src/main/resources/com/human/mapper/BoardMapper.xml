@@ -19,6 +19,12 @@
 			SELECT COUNT(*) FROM BO_NOTICE	
 	</select>
 	
+	<!-- 글읽기 -->
+	<select id="selectBoardOne" resultType="com.human.domain.Board">
+		SELECT * FROM bo_notice
+		WHERE no = #{no}
+	</select>
+	
 	
 
 

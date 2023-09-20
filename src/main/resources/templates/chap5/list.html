@@ -53,7 +53,8 @@
 						<tr class="" th:each="obj:${list}">
 							<td class="iboard-list-uid" th:text="${obj.no}">10</td>
 							<td class="iboard-list-title">
-							<a href="read" th:text="${obj.subject}">코로나 백신 개발 3차 임상 실험 완료</a></td>
+							<!--href="read?no=1"-->
+							<a th:href="|read?no=${obj.no}|" th:text="${obj.subject}">코로나 백신 개발 3차 임상 실험 완료</a></td>
 							<td class="iboard-list-user" th:text="${obj.writer}">admin</td>
 							<td class="iboard-list-date"  th:text="${obj.regdate}">2020.12.20</td>
 							<!--<td class="iboard-list-vote">100</td>-->
