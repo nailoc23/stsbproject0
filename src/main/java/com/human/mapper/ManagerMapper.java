@@ -17,5 +17,8 @@ public interface ManagerMapper {
 	
 	//관리자 개인 정보 보기 함수
 	public Manager managerSelect(int id) throws Exception;
+	
+	//관리자 정보 등록 
+	public int insertManagerOne(Manager manager) throws Exception;
 
 }

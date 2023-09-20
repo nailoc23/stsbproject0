@@ -46,12 +46,17 @@ public class ManagerController {
 	}
 	
 	@PostMapping(path="/mngreg") 
-	public String mngreg(Manager manager) { // 등록한 후에 화면 대신 페이지 이동 mnglist 
+	public String mngreg(Manager manager) throws Exception { // 등록한 후에 화면 대신 페이지 이동 mnglist 
 		
-		System.out.println("입력한아이디: " + manager.getId());
-		System.out.println("입력한비밀번호: " + manager.getPwd());
-		System.out.println("입력한이름: " + manager.getName());
-		System.out.println("입력한폰번호: " + manager.getPhone());
+		/*
+		 * System.out.println("입력한아이디: " + manager.getId());
+		 * System.out.println("입력한비밀번호: " + manager.getPwd());
+		 * System.out.println("입력한이름: " + manager.getName());
+		 * System.out.println("입력한폰번호: " + manager.getPhone());
+		 */
+		int result = managersv.regManager(manager);
+		
+		System.out.println("등록결과: " +  result);
 		
 		return "redirect:/mnglist";
 	}

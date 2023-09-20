@@ -1,0 +1,32 @@
+package com.human.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.human.domain.Board;
+import com.human.mapper.BoardMapper;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+	@Autowired
+	BoardMapper boardmapper;
+
+	@Override
+	public List<Board> getBoardList() throws Exception {
+		// TODO Auto-generated method stub
+		List<Board> list = boardmapper.selectBoardList();
+		
+		return list;
+	}
+
+	@Override
+	public int getTotalBoard() throws Exception {
+		// TODO Auto-generated method stub
+		int rst = boardmapper.selectTotalBoard();
+		return rst;
+	}
+
+}

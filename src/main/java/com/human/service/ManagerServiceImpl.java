@@ -29,4 +29,12 @@ public class ManagerServiceImpl implements ManagerService {
 		return rst;
 	}
 
+	// 관리자 정보 등록
+	@Override
+	public int regManager(Manager manager) throws Exception {
+		// TODO Auto-generated method stub
+		int rst = managerMap.insertManagerOne(manager);
+		return rst;
+	}
+
 }

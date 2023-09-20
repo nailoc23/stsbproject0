@@ -17,5 +17,9 @@
 	<select id="managerSelect" resultType="com.human.domain.Manager">
 		SELECT id, pwd, name, phone FROM MANAGER WHERE id=#{id}
 	</select>
+	
+	<insert id="insertManagerOne">
+		INSERT INTO MANAGER VALUES (#{id}, #{pwd}, #{name}, #{phone})
+	</insert>
 
 </mapper>    
