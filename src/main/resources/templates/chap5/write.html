@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet" href="css/board_default.css">
+<link rel="stylesheet" href="css/board_style.css">
+
+</head>
+<body>
+	
+	<div class="wrapper_content">
+	    <div class="content"> 
+	
+	        <div class="content_title">
+	            <br><br>
+	            <h2>게시판</h2>
+	        </div>
+	
+	        <div id="iboard-thumbnail-editor">
+		
+	            <form action="write" class="iboard-form" id="frm_write" method="POST">
+	            
+	            <input type="hidden" name="board_id" value="hidden_val">
+	            
+	            <div class="iboard-attr-row iboard-attr-title">
+	                <label class="attr-name" for="title">
+	                <span class="field-name">제목</span>
+	                <span class="attr-required-text">*</span></label>
+	                <div class="attr-value">
+	                    <input type="text" id="title" name="subject" required>
+	                </div>
+	            </div>
+	            
+	            <div class="iboard-attr-row iboard-attr-author">
+	                <label class="attr-name" for="iboard-input-member-display">
+	                <span class="field-name">작성자</span>
+	                <span class="attr-required-text">*</span></label>
+	                <div class="attr-value">
+	                    <input type="text" id="iboard-input-member-display" name="writer" required>
+	                </div>
+	            </div>
+	            
+	            <!-- 
+	            <div class="iboard-attr-row iboard-attr-password">
+	                <label class="attr-name" for="iboard-input-password">
+	                <span class="field-name">비밀번호</span>
+	                <span class="attr-required-text">*</span></label>
+	                <div class="attr-value">
+	                    <input type="text" id="iboard-input-password" name="passwd" value="">
+	                </div>
+	            </div>
+	            -->
+	            
+	            <div class="iboard-attr-row iboard-attr-content">
+	                <label class="attr-name" for="iboard-content">
+	                <span class="field-name">내용</span></label>
+	                <div id="iboard-content-wrap">
+	                    
+	                    <div id="iboard-content-editor-container" class="editor-container">
+	                    <textarea class="editor-textarea" style="height:250px; width:99%;" cols="40" name="content" id="iboard_content" required></textarea>
+	                    </div>
+	                </div>
+	            </div>
+	            
+	            <!--  
+	            <div class="iboard-attr-row iboard-attr-attach-1">
+	                <label class="attr-name" for="iboard-input-file1">
+	                <span class="field-name">첨부파일-1</span></label>
+	                <div class="attr-value">
+	                    <input type="file" id="iboard-input-file1" name="attach1" value="">
+	                </div>
+	            </div>
+	            -->
+	            <div class="iboard-control">
+	                <div class="left">
+	                    <button type="button" onclick="history.back();">돌아가기</button>
+	                </div>
+	                
+	                <div class="right">
+	                    <button type="button" onclick="bbs_write();">저장하기</button>
+	                </div>
+	            </div>
+	            
+	            </form>
+	        
+	        
+	        </div> <!--  iboard-thumbnail-editor -->
+	
+	    </div>    
+
+	</div>
+	
+<!--	<script src="/js/jquery.min.js"></script>-->
+	<script>
+		function bbs_write() {
+			//alert(1111);
+			
+    		frm = document.getElementById("frm_write");
+    		
+    		frm.submit();
+    	}
+		
+	</script>
+
+</body>
+</html>

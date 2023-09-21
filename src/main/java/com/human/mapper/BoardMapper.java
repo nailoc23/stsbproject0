@@ -15,4 +15,8 @@ public interface BoardMapper {
 	
 	public Board selectBoardOne(int no) throws Exception;
 	
+	public int updateBoardHit(int no) throws Exception;
+	
+	public int deleteBoardOne(int no) throws Exception;
+	
 }

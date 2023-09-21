@@ -22,7 +22,7 @@
 				<div class="iboard-total-count">전체 <strong th:text="${total}"></strong></div>
 			
 				<div class="iboard-sort">
-					<form id="iboard-sort-form-1" method="GET" action="noticelist.jsp">
+					<form id="iboard-sort-form-1" method="POST" action="write">
 						<select id="iboard_list_sort" name="iboard_list_sort" onchange="sort();">
 						<option value="" selected="selected">정렬선택</option>
 						<option value="no">최신순</option>
@@ -94,7 +94,7 @@
 				</div>
 				
 				<div class="right">
-				<button type="button" onclick="location.href='boardwrite.html'">글쓰기</button></div>
+				<button type="button" onclick="location.href='write'">글쓰기</button></div>
 			</div>
 
 		</div>

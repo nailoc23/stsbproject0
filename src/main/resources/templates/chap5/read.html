@@ -56,10 +56,16 @@
                         <!-- 이전 또는 다음 게시물 -->
                         <div class="iboard-document-action">
                             <div class="left">
-                            <button>이전글</button></div>
+                            <button>이전글</button>
+                            <button>다음글</button>
+                            </div>
                             
                             <div class="right">
-                            <button type="button" onclick="votes();">추천</button> <button>다음글</button></div>
+								<button type="button" th:onclick="modBoard([[${board.no}]]);">수정</button>
+                            	<!--<button type="button" onclick="modBoard(1000);">수정</button>-->
+                            	<button type="button" th:onclick="delBoard([[${board.no}]]);">삭제</button>
+                            	<!--<button type="button" onclick="delBoard(1);">삭제</button>-->
+                            </div>
                         </div>
                     
                     </div>
@@ -228,6 +234,27 @@
 
         </div>    
     </div>
+    
+    <script src="/js/jquery-3.7.0.min.js"></script>
+    <script>
+		function delBoard(no) {
+			
+			//alert(no);
+			
+			ok = confirm("해당글을 삭제하시겠습니까?", "삭제학인");
+			
+			//alert(ok); // true면 삭제진행
+			
+			if(ok) {
+				location.href="delete?no="+no;
+			}
+		}
+		
+		function modBoard(no) {
+			
+			alert(no);
+		}
+	</script>
 
 </body>
 </html>

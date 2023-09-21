@@ -25,6 +25,18 @@
 		WHERE no = #{no}
 	</select>
 	
+	<!-- 조회수 업데이트 증가 -->
+	<update id="updateBoardHit">
+		UPDATE BO_NOTICE SET hit=hit+1
+		WHERE no=#{no}
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="deleteBoardOne">
+		DELETE FROM bo_notice
+		WHERE no=#{no}
+	</delete>
+	
 	
 
 

@@ -14,5 +14,11 @@ public interface BoardService {
 	
 	// 게시판 글읽기
 	public Board readBoardOne(int no) throws Exception;
+	
+	// 게시판 조회수 증가
+	public int incBoardHit(int no) throws Exception;
+	
+	// 게시글 삭제
+	public int removeBoard(int no) throws Exception;
 
 }
