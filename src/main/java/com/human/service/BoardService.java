@@ -20,5 +20,8 @@ public interface BoardService {
 	
 	// 게시글 삭제
 	public int removeBoard(int no) throws Exception;
+	
+	// 게시글 등록하기
+	public int regBoard(Board board) throws Exception;
 
 }

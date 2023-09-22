@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.human.domain.Board;
 import com.human.service.BoardService;
@@ -63,9 +64,23 @@ public class BoardController {
 	@PostMapping("/write")
 	public String write(Board board) throws Exception {
 		
-		System.out.println("작성자: " + board.getWriter());
-		System.out.println("제목: " + board.getSubject());
+		
+		System.out.println("작성자: " + board.getWriter()); 
+		System.out.println("제목: " + board.getSubject()); 
 		System.out.println("글내용: " + board.getContent());
+		
+		MultipartFile[] files = board.getFiles();   // 배열저장
+		
+		if(files != null ) {
+			
+			for(MultipartFile file : files) {
+				
+				System.out.println("파일명: " + file.getOriginalFilename());
+				
+			}
+		}
+		 
+		//int result = boardsv.regBoard(board);
 		
 		return "redirect:/list";
 	}

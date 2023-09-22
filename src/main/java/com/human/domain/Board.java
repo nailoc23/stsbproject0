@@ -1,5 +1,7 @@
 package com.human.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Board {
 	private int no;
 	private int groupno;
@@ -14,6 +16,9 @@ public class Board {
 	private String content;
 	private int hit;
 	private String regdate;
+	
+	private MultipartFile[] files;
+	
 	
 	// getter and setter
 	public int getNo() {
@@ -83,7 +88,12 @@ public class Board {
 		this.regdate = regdate;
 	}
 	
-	
+	public MultipartFile[] getFiles() {
+		return files;
+	}
+	public void setFiles(MultipartFile[] files) {
+		this.files = files;
+	}
 	
 	
 }

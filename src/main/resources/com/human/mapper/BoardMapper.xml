@@ -38,6 +38,14 @@
 	</delete>
 	
 	
+	<!-- 게시글 입력 -->
+	<insert id="insertBoard">
+		INSERT INTO bo_notice
+		(no, groupno, id, writer, subject, content) 
+		VALUES 
+		(BO_NOTICE_SEQ.NEXTVAL, BO_NOTICE_SEQ.CURRVAL, 'admin', #{writer}, #{subject}, #{content})		
+	</insert>
+	
 
 
 </mapper>    
