@@ -80,7 +80,7 @@ public class BoardController {
 			}
 		}
 		 
-		//int result = boardsv.regBoard(board);
+		int result = boardsv.regBoard(board);
 		
 		return "redirect:/list";
 	}
