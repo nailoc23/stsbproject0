@@ -8,5 +8,7 @@ import com.human.domain.Files;
 public interface FilesMapper {
 	
 	public int insertFiles(Files upfiles) throws Exception;
+	
+	public Files selectFilesList(int bno) throws Exception;
 
 }

@@ -7,11 +7,19 @@
     
 <mapper namespace="com.human.mapper.FilesMapper">
 
+	<!-- 첨부파일 저장 -->
 	<insert id="insertFiles">
 		INSERT INTO BO_NOTICE_FILE
 		(fno, filename, filepath, bno)
 		VALUES
 		(bo_notice_file_seq.nextval, #{filename}, #{filepath}, bo_notice_seq.currval)
 	</insert>
+	
+	<!-- 첨부파일 목록 가져오기 -->
+	<select id="selectFilesList" resultType="com.human.domain.Files">
+		SELECT fno, filename, filepath 
+		FROM bo_notice_file
+		WHERE bno = #{bno}
+	</select>
 
 </mapper>

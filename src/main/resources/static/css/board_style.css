@@ -67,6 +67,11 @@
 #iboard-default-document .iboard-content .content-view .aligncenter { display: block; margin-right: auto; margin-left: auto; }
 #iboard-default-document .iboard-content .content-view .alignright { float:right; }
 #iboard-default-document .iboard-content .content-view .alignleft { float: left; }
+
+#iboard-default-document .iboard-content .attach-file { margin: 0; padding: 22px; word-break: break-all;}
+#iboard-default-document .iboard-content .attach-file ul { list-style-type: none; padding-left: 0; }
+#iboard-default-document .iboard-content .attach-file ul li a { border: 1px solid blue; text-decoration: none; padding: 5px;}
+
 #iboard-default-document .iboard-document-action { padding: 0 22px 5px 22px; overflow: hidden; line-height: 1; margin-bottom: 20px; }
 #iboard-default-document .iboard-document-action .left { position: static; float: left; }
 #iboard-default-document .iboard-document-action .right { position: static; float: right; text-align: right; }

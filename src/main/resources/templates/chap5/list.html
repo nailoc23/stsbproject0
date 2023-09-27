@@ -19,7 +19,7 @@
 			<div id="iboard-default-list">
 				<div class="iboard-list-header">
 				
-				<div class="iboard-total-count">전체 <strong th:text="${total}"></strong></div>
+				<div class="iboard-total-count">전체 <strong th:text="${pageObj.totalCount}"></strong></div>
 			
 				<div class="iboard-sort">
 					<form id="iboard-sort-form-1" method="POST" action="write">
@@ -68,10 +68,16 @@
 			
 			<div class="iboard-pagination">
 				<ul class="iboard-pagination-pages">
-					<li class="active"><a href="">1</a></li>
-					<li><a href="">2</a></li>
+					<li class="pre-page"><a href=""><<</a></li>
+					<li th:each="pageno : ${#numbers.sequence(pageObj.startPage,pageObj.endPage)}" th:classappend="${pageno==page} ? 'active'">
+						<a th:href="|list?page=${pageno}|" th:text="${pageno}">1</a>
+					</li>
+					
+					<!--<li><a href="">2</a></li>
+					<li><a href="">3</a></li>-->
+					
 					<li class="next-page"><a href="">>></a></li>
-					<li class="last-page"><a here="">마지막</a></li>
+					<!--<li class="last-page"><a here="">마지막</a></li>-->
 				</ul>
 			</div>
 			

@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.human.domain.Board;
 import com.human.domain.Files;
 import com.human.mapper.BoardMapper;
+import com.human.mapper.FilesMapper;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -24,11 +25,14 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
 	BoardMapper boardmapper;
+	
+	@Autowired
+	FilesMapper filesmapper;
 
 	@Override
-	public List<Board> getBoardList() throws Exception {
+	public List<Board> getBoardList(int page) throws Exception {
 		// TODO Auto-generated method stub
-		List<Board> list = boardmapper.selectBoardList();
+		List<Board> list = boardmapper.selectBoardList(page);
 		
 		return list;
 	}
@@ -64,7 +68,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int regBoard(Board board) throws Exception {
 		// TODO Auto-generated method stub
-		int rst = boardmapper.insertBoard(board);
+		int rst = boardmapper.insertBoard(board);  // 게시판 글등록
 		
 		if(rst == 0) return rst; // 게시판 등록 실패라면 아래 코드는 실행하지 않음
 		
@@ -78,31 +82,42 @@ public class BoardServiceImpl implements BoardService {
 			
 			for( MultipartFile file : files ) {
 				
-				byte[] fileData = file.getBytes();   // 첨부파일 데이터
+				if(file.getSize() > 0 ) {
 				
-				// 오리지널 파일명
-				String originFileName = file.getOriginalFilename();
-				// 새로운 파일명으로 저장 : 날짜명_파일명으로 새파일 생성 20201023123010_파일명
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-				long currentTime = System.currentTimeMillis();
-				String newFileName = sdf.format(new Date(currentTime)) + "_" + originFileName;
-				
-				// 파일업로드
-				File uploadFile = new File(uploadPath, newFileName);
-				FileCopyUtils.copy(fileData, uploadFile);     
-				
-				// bo_notice_file 테이블에 파일정보를 저장
-				Files upfiles = new Files();  // DTO
-				upfiles.setFilename(originFileName);
-				upfiles.setFilepath(uploadPath + newFileName);
-				
-				
+					byte[] fileData = file.getBytes();   // 첨부파일 데이터
+					
+					// 오리지널 파일명
+					String originFileName = file.getOriginalFilename();
+					// 새로운 파일명으로 저장 : 날짜명_파일명으로 새파일 생성 20201023123010_파일명
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+					long currentTime = System.currentTimeMillis();
+					String newFileName = sdf.format(new Date(currentTime)) + "_" + originFileName;
+					
+					// 파일업로드
+					File uploadFile = new File(uploadPath, newFileName);
+					FileCopyUtils.copy(fileData, uploadFile);     
+					
+					// bo_notice_file 테이블에 파일정보를 저장
+					Files upfiles = new Files();  // DTO
+					upfiles.setFilename(originFileName);
+					upfiles.setFilepath(uploadPath + "/" + newFileName);
+					
+					filesmapper.insertFiles(upfiles);
+				}
+								
 			}
 		}
 		
 		
 		
 		return rst;
+	}
+
+	@Override
+	public Files getFilesList(int bno) throws Exception {
+		// TODO Auto-generated method stub
+		Files downFiles = filesmapper.selectFilesList(bno);
+		return downFiles;
 	}
 
 }

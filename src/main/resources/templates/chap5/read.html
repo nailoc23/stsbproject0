@@ -51,6 +51,15 @@
                             <div class="content-view">
 	                            <p th:text="${board.content}">내용입니다</p>
                             </div>
+                            
+                            <div class="attach-file" th:if="${down}">								
+								<ul> <!-- 목록 -->
+									<li>
+										<!--<a href="|/download/${down.fno}|" th:text="${down.filename}">첨부파일.jpg</a>-->
+										<a th:href="|download/${down.fno}|" th:text="${down.filename}">첨부파일.jpg</a>
+									</li>
+								</ul>											
+							</div>
                         </div>
                         
                         <!-- 이전 또는 다음 게시물 -->

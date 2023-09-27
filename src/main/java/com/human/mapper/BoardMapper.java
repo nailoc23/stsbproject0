@@ -9,7 +9,7 @@ import com.human.domain.Board;
 @Mapper
 public interface BoardMapper {
 	
-	public List<Board> selectBoardList() throws Exception;
+	public List<Board> selectBoardList(int page) throws Exception;
 	
 	public int selectTotalBoard()  throws Exception;
 	
